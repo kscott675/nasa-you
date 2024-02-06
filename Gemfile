@@ -8,7 +8,7 @@ gem "sinatra"
 gem "sinatra-contrib"
 
 # Use Puma as the app server
-gem "puma", "~> 5.0"
+gem "puma", "~> 6.0"
 
 # use active record
 gem "sinatra-activerecord"
@@ -35,3 +35,5 @@ group :test do
   gem "webdrivers"
   gem "i18n"
 end
+
+gem "rackup", "~> 1.0"
