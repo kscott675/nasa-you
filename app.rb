@@ -13,10 +13,10 @@ end
 get("/birthday") do
   erb(:birthday_new)
 end
-
+begin
 post("/birthday/results") do
   nasa_url = nil
-  year, month, day = params[:birthday].split('-').map(&:to_i)
+  year, month, day = params[:birthday].split("-").map(&:to_i)
   @birthday = Date.new(year, month, day)
   if @birthday.year < 1996
     # Update the year to 1996
@@ -29,8 +29,10 @@ post("/birthday/results") do
   nasa_parsed = JSON.parse(nasa_raw)
   @image = nasa_parsed.dig("url")
   @whole_message = nasa_parsed.dig("explanation").split(/(?<!\w\.\w.)(?<![A-Z][a-z]\.)(?<=\.|\?)\s/)
-  @general_message = @whole_message.first(2).join(' ')
-  @whole_message = @whole_message[2..-1].join('')
-
+  @general_message = @whole_message.first(2).join(" ")
+  @whole_message = @whole_message[2..-1].join("")
   erb(:birthday_results)
+end
+rescue NoMethodError
+  "<p> {@birthday} </p>"
 end
