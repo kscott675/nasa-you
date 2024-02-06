@@ -34,5 +34,5 @@ post("/birthday/results") do
   erb(:birthday_results)
 end
 rescue NoMethodError
-  "<p> {@birthday} </p>"
+  erb(:error)
 end
