@@ -13,7 +13,8 @@ end
 get("/birthday") do
   erb(:birthday_new)
 end
-begin
+
+
 post("/birthday/results") do
   nasa_url = nil
   year, month, day = params[:birthday].split("-").map(&:to_i)
@@ -32,7 +33,4 @@ post("/birthday/results") do
   @general_message = @whole_message.first(2).join(" ")
   @whole_message = @whole_message[2..-1].join("")
   erb(:birthday_results)
-end
-rescue NoMethodError
-  erb(:error)
 end
