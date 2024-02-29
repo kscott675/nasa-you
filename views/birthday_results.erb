@@ -1,9 +1,15 @@
-<div class="container">
-    <h4 style="font-size:20px;">On <%= @birthday %>, NASA made this discovery:</h4>
+<div class="row p-3">
+<h4 style="font-size:20px;">On <%= @birthday %>, NASA made this discovery:</h4>
+</div>
+<div class="card">
+    <div class="row">
+      <div class="col p-4"
     <p class="text"> <%= @general_message %> </p>
     <img src="<%= @image %>" id="img">
+    </div>
   </div>
+</div>
 
-  <footer>
-    <button class="btn" onclick="window.location.href='/'">Enter another date</button>
-  </footer>
+<footer>
+  <button class="btn text-bg-dark" onclick="window.location.href='/'">Enter another date</button>
+</footer>

@@ -1,8 +1,19 @@
 <h4>Enter your birthday to retrieve the photo NASA took on the day you were born.</h4>
-
-  <form action="/birthday/results" method="post">
+<hr>
+<form action="/birthday/results" method="post">
+  <div class="row">
+      <div class="col-m-12 text-center">
     <label for="birthday">Birthday:</label>
+  </div>
+</div>
+<div class="row">
+  <div class="col-m-12 text-center">
     <input type="date" id="birthday" name="birthday" required>
-
-    <button style="display: inline-block;" class="btn" type="submit">Submit</button>
-  </form>
+  </div>
+</div>
+<div class="row g-3">
+  <div class="col-m-12 text-center">
+    <button style="display: inline-block;" class="btn text-bg-dark p-10 m-10" type="submit">Submit</button>
+  </div>
+</div>
+</form>
